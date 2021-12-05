@@ -93,7 +93,8 @@ var App = {
   updateNotes: function (btn) {
     btn.button('loading')
     App.noteIntance.modifyNote(App.account, App.currentIndex, $('#modify_note').val()).then(function () {
-      $('.index_' + App.currentIndex).text($('#modify_note').val())
+      //$('.index_' + App.currentIndex).text($('#modify_note').val())
+      $('.index_' + App.currentIndex).find('p')[0].innerHTML=($('#modify_note').val());
       $('#modify-model').modal('hide')
     }).catch(function (err) {
       console.log(err);
